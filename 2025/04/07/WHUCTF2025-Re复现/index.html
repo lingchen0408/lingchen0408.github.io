@@ -19,49 +19,51 @@
   <meta name="author" content="七秒钟的记忆">
   <meta name="keywords" content="">
   
-    <meta name="description" content="前言WHU大二，在CTF中摸爬滚打的逆向小白一枚，前段时间参加的WHUCTF校赛，记录了一下解题WP 同时这也是苯人的第一篇博客，还挺有纪念意义的，哈哈 贴两张最终战果：（队友tql ![](C:\Users\28945\Pictures\Screenshots\屏幕截图 2025-03-31 175030.png) ![屏幕截图 2025-03-31 174940](C:\Users\28945">
+    <meta name="description" content="WHUCTF2025校赛-Re方向题目复现 &amp; 新人的第一篇博客">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sevora-Blog">
-<meta property="og:url" content="http://lingchen0408.github.io/2025/04/07/WHUCTF%20Re%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:title" content="WHUCTF2025-Re复现">
+<meta property="og:url" content="http://lingchen0408.github.io/2025/04/07/WHUCTF2025-Re%E5%A4%8D%E7%8E%B0/index.html">
 <meta property="og:site_name" content="Sevora-Blog">
-<meta property="og:description" content="前言WHU大二，在CTF中摸爬滚打的逆向小白一枚，前段时间参加的WHUCTF校赛，记录了一下解题WP 同时这也是苯人的第一篇博客，还挺有纪念意义的，哈哈 贴两张最终战果：（队友tql ![](C:\Users\28945\Pictures\Screenshots\屏幕截图 2025-03-31 175030.png) ![屏幕截图 2025-03-31 174940](C:\Users\28945">
+<meta property="og:description" content="WHUCTF2025校赛-Re方向题目复现 &amp; 新人的第一篇博客">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="c:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331101204477.png">
-<meta property="og:image" content="c:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331103609799.png">
-<meta property="og:image" content="c:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331104247693.png">
-<meta property="og:image" content="c:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331104645290.png">
-<meta property="og:image" content="c:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331105501427.png">
-<meta property="og:image" content="c:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331110111114.png">
-<meta property="og:image" content="c:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331123521263.png">
-<meta property="og:image" content="c:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331123847913.png">
-<meta property="og:image" content="c:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331123735468.png">
-<meta property="og:image" content="c:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331125817699.png">
-<meta property="og:image" content="c:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331130100979.png">
-<meta property="og:image" content="c:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331133844200.png">
-<meta property="og:image" content="c:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331133902360.png">
-<meta property="og:image" content="c:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331133954598.png">
-<meta property="og:image" content="c:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331134151782.png">
-<meta property="og:image" content="c:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331140319205.png">
-<meta property="og:image" content="c:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331140631136.png">
-<meta property="og:image" content="c:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331141434382.png">
-<meta property="og:image" content="c:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331142014423.png">
-<meta property="og:image" content="c:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331142547941.png">
-<meta property="og:image" content="c:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250407180328909.png">
-<meta property="og:image" content="c:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250407180430769.png">
-<meta property="og:image" content="c:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250407181006062.png">
-<meta property="og:image" content="c:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250407181600494.png">
-<meta property="og:image" content="c:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250407182959077.png">
-<meta property="og:image" content="c:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250407184214830.png">
-<meta property="og:image" content="c:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250407184149276.png">
-<meta property="article:published_time" content="2025-04-07T11:12:12.295Z">
-<meta property="article:modified_time" content="2025-04-07T11:10:30.427Z">
+<meta property="og:image" content="http://lingchen0408.github.io/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331175030.png">
+<meta property="og:image" content="http://lingchen0408.github.io/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331174940.png">
+<meta property="og:image" content="http://lingchen0408.github.io/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331101204477.png">
+<meta property="og:image" content="http://lingchen0408.github.io/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331103609799.png">
+<meta property="og:image" content="http://lingchen0408.github.io/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331104247693.png">
+<meta property="og:image" content="http://lingchen0408.github.io/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331104645290.png">
+<meta property="og:image" content="http://lingchen0408.github.io/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331105501427.png">
+<meta property="og:image" content="http://lingchen0408.github.io/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331110111114.png">
+<meta property="og:image" content="http://lingchen0408.github.io/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331123521263.png">
+<meta property="og:image" content="http://lingchen0408.github.io/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331123847913.png">
+<meta property="og:image" content="http://lingchen0408.github.io/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331123735468.png">
+<meta property="og:image" content="http://lingchen0408.github.io/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331125817699.png">
+<meta property="og:image" content="http://lingchen0408.github.io/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331130100979.png">
+<meta property="og:image" content="http://lingchen0408.github.io/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331133844200.png">
+<meta property="og:image" content="http://lingchen0408.github.io/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331133902360.png">
+<meta property="og:image" content="http://lingchen0408.github.io/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331133954598.png">
+<meta property="og:image" content="http://lingchen0408.github.io/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331134151782.png">
+<meta property="og:image" content="http://lingchen0408.github.io/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331140319205.png">
+<meta property="og:image" content="http://lingchen0408.github.io/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331140631136.png">
+<meta property="og:image" content="http://lingchen0408.github.io/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331141434382.png">
+<meta property="og:image" content="http://lingchen0408.github.io/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331142014423.png">
+<meta property="og:image" content="http://lingchen0408.github.io/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331142547941.png">
+<meta property="og:image" content="http://lingchen0408.github.io/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250407180328909.png">
+<meta property="og:image" content="http://lingchen0408.github.io/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250407180430769.png">
+<meta property="og:image" content="http://lingchen0408.github.io/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250407181006062.png">
+<meta property="og:image" content="http://lingchen0408.github.io/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250407181600494.png">
+<meta property="og:image" content="http://lingchen0408.github.io/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250407182959077.png">
+<meta property="og:image" content="http://lingchen0408.github.io/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250407184214830.png">
+<meta property="og:image" content="http://lingchen0408.github.io/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250407184149276.png">
+<meta property="article:published_time" content="2025-04-07T11:43:43.000Z">
+<meta property="article:modified_time" content="2025-04-07T12:55:41.919Z">
 <meta property="article:author" content="七秒钟的记忆">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="c:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331101204477.png">
+<meta name="twitter:image" content="http://lingchen0408.github.io/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331175030.png">
   
   
   
-  <title>Sevora-Blog</title>
+  <title>WHUCTF2025-Re复现 - Sevora-Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -247,7 +249,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text=""></span>
+            <span id="subtitle" data-typed-text="WHUCTF2025-Re复现"></span>
           
         </div>
 
@@ -258,7 +260,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-04-07 19:12" pubdate>
+        <time datetime="2025-04-07 19:43" pubdate>
           2025年4月7日 晚上
         </time>
       </span>
@@ -270,7 +272,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          6.6k 字
+          6.5k 字
         
       </span>
     
@@ -327,21 +329,21 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header"></h1>
+            <h1 id="seo-header">WHUCTF2025-Re复现</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>WHU大二，在CTF中摸爬滚打的逆向小白一枚，前段时间参加的WHUCTF校赛，记录了一下解题WP</p>
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>WHU大二，在CTF中摸爬滚打的逆向小白一枚，前段时间参加的WHUCTF校赛，记录一下解题思路</p>
 <p>同时这也是苯人的第一篇博客，还挺有纪念意义的，哈哈</p>
-<p>贴两张最终战果：（队友tql</p>
-<p>![](C:\Users\28945\Pictures\Screenshots\屏幕截图 2025-03-31 175030.png)</p>
-<p>![屏幕截图 2025-03-31 174940](C:\Users\28945\Pictures\Screenshots\屏幕截图 2025-03-31 174940.png)</p>
+<p>贴两张最终战果：（队友tql）</p>
+<p><img src="/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331175030.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331174940.png" srcset="/img/loading.gif" lazyload></p>
 <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>以下是对比赛题目的复现，写的太烂直接喷就好了，没必要划走（</p>
 <h2 id="签到题"><a href="#签到题" class="headerlink" title="签到题"></a>签到题</h2><p>64位PE，无壳</p>
 <p>打开是一个C++程序</p>
 <p>整体逻辑比较简单：</p>
-<p><img src="C:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331101204477.png" srcset="/img/loading.gif" lazyload alt="image-20250331101204477"></p>
+<p><img src="/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331101204477.png" srcset="/img/loading.gif" lazyload></p>
 <p>要求我们输入flag，然后对这个flag进行加密，最后再与所给的密文进行比对</p>
 <p>加密的逻辑在48行，对每个字符的ascii值+10</p>
 <p>将加密的逻辑反过来即可</p>
@@ -352,24 +354,24 @@
 <p>打开集贸没有</p>
 <p>题目提到tls回调函数，查了一下，发现tls函数是一种可以在程序EP之前执行的函数</p>
 <p>尝试在函数列表中搜索tls，还真有。那么猜测主要逻辑就隐藏在这里</p>
-<p><img src="C:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331103609799.png" srcset="/img/loading.gif" lazyload alt="image-20250331103609799"></p>
+<p><img src="/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331103609799.png" srcset="/img/loading.gif" lazyload></p>
 <p>tls主要分成0和1两部分</p>
 <p>tls0那部分是将<code>byte_41C000[i] ^ 5</code>的结果写入story.txt，这里直接写脚本打印：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">str</span>=[  <br><span class="hljs-comment"># 省略</span><br>]<br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">str</span>:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(i^<span class="hljs-number">5</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br></code></pre></td></tr></table></figure>
 
-<p>发现是siesta的悲伤小故事（，告诉我们flag在图片中：</p>
-<p><img src="C:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331104247693.png" srcset="/img/loading.gif" lazyload alt="image-20250331104247693"></p>
+<p>发现是siesta的悲伤小故事，告诉我们flag在图片中：</p>
+<p><img src="/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331104247693.png" srcset="/img/loading.gif" lazyload></p>
 <p>点开tls_1，将<code>byte_41C318[i] ^ 0x20</code>的结果写入图片，给出EXP：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><br><span class="hljs-type">unsigned</span> <span class="hljs-type">char</span> byte_F3C318[<span class="hljs-number">6918</span>] = &#123;<br>    <span class="hljs-comment">// 省略</span><br>&#125;;<br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-type">const</span> <span class="hljs-type">char</span> *fileName = <span class="hljs-string">&quot;secret.png&quot;</span>;<br><br>    <span class="hljs-comment">// 打开文件（当前文件夹下）</span><br>    FILE *stream = fopen(fileName, <span class="hljs-string">&quot;wb&quot;</span>);<br>    <span class="hljs-keyword">if</span> (!stream)<br>    &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;无法打开文件: %s\n&quot;</span>, fileName);<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    &#125;<br><br>    <span class="hljs-comment">// 写入数据</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">6918</span>; ++i)<br>    &#123;<br>        fputc(byte_F3C318[i] ^ <span class="hljs-number">0x20</span>, stream);<br>    &#125;<br><br>    fclose(stream);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;文件写入成功: %s\n&quot;</span>, fileName);<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>然后得到跳舞的小人图片，按照题目给的网站解密即可</p>
-<p><img src="C:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331104645290.png" srcset="/img/loading.gif" lazyload alt="image-20250331104645290"></p>
+<p><img src="/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331104645290.png" srcset="/img/loading.gif" lazyload></p>
 <h2 id="login"><a href="#login" class="headerlink" title="login"></a>login</h2><p>下载附件，发现是apk文件，拖入jeb</p>
 <p>定位到MainActivity函数，反编译，捕捉到关键逻辑：</p>
-<p><img src="C:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331105501427.png" srcset="/img/loading.gif" lazyload alt="image-20250331105501427"></p>
+<p><img src="/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331105501427.png" srcset="/img/loading.gif" lazyload alt="image-20250331105501427"></p>
 <p>不熟悉Java，但大概理解就是，将Username存到v7_1，将Password存到v2_1，然后对这两部分进行验证</p>
 <p>对Username的验证比较简单，结合前面给的enc和key差不多能猜出来这就是个tea加&#x2F;解密，点进去一看确实是</p>
-<p><img src="C:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331110111114.png" srcset="/img/loading.gif" lazyload alt="image-20250331110111114"></p>
+<p><img src="/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331110111114.png" srcset="/img/loading.gif" lazyload></p>
 <p>并且这道题不需要对算法进行逆向（当时没理清逻辑，直接无脑逆，卡了好久……）直接顺着它的数据和解密就能拿到Username</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-type">void</span> <span class="hljs-title function_">tea_decode</span><span class="hljs-params">(<span class="hljs-type">unsigned</span> <span class="hljs-type">int</span> ciphertext[<span class="hljs-number">2</span>], <span class="hljs-type">unsigned</span> <span class="hljs-type">int</span> *key)</span><br>&#123;<br>    <span class="hljs-type">unsigned</span> <span class="hljs-type">int</span> cip0 = ciphertext[<span class="hljs-number">0</span>];<br>    <span class="hljs-type">unsigned</span> <span class="hljs-type">int</span> cip1 = ciphertext[<span class="hljs-number">1</span>];<br>    <span class="hljs-type">unsigned</span> <span class="hljs-type">int</span> sum = <span class="hljs-number">0xC6EF3720</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">0x20</span>; ++i)<br>    &#123;<br>        cip0 -= (((cip1 &lt;&lt; <span class="hljs-number">4</span>) ^ cip1 &gt;&gt; <span class="hljs-number">5</span>) + cip1) ^ (key[sum &amp; <span class="hljs-number">3</span>] + sum);<br>        sum += <span class="hljs-number">1640531527</span>;<br>        cip1 -= (((cip0 &lt;&lt; <span class="hljs-number">4</span>) ^ cip0 &gt;&gt; <span class="hljs-number">5</span>) + cip0) ^ (key[sum &gt;&gt; <span class="hljs-number">11</span> &amp; <span class="hljs-number">3</span>] + sum);<br>    &#125;<br>    ciphertext[<span class="hljs-number">0</span>] = cip0;<br>    ciphertext[<span class="hljs-number">1</span>] = cip1;<br>&#125;<br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-type">unsigned</span> <span class="hljs-type">int</span> key[] = &#123;<span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">5</span>&#125;; <span class="hljs-comment">// 密钥</span><br>    <span class="hljs-type">unsigned</span> <span class="hljs-type">int</span> ciphertext[<span class="hljs-number">4</span>] = &#123;<br>        <span class="hljs-number">0xE8894BC5</span>, <span class="hljs-number">0x6D26C4FE</span>, <span class="hljs-number">0x72A27D59</span>, <span class="hljs-number">0x820FF773</span>&#125;;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">2</span>; i++)<br>    &#123;<br>        tea_decode(ciphertext + <span class="hljs-number">2</span> * i, key); <span class="hljs-comment">// 以两个32位数据为单位来进行解密</span><br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">16</span>; i++)<br>    &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%c&quot;</span>, *((<span class="hljs-type">char</span> *)ciphertext + i));<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
@@ -403,31 +405,31 @@
 <h2 id="ezrust"><a href="#ezrust" class="headerlink" title="ezrust"></a>ezrust</h2><p>拿到题目，看见是rust，两眼一黑</p>
 <p>64位，无壳，用IDA打开</p>
 <p>定位到主函数，首先是一堆被去了符号的函数：</p>
-<p><img src="C:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331123521263.png" srcset="/img/loading.gif" lazyload alt="image-20250331123521263"></p>
+<p><img src="/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331123521263.png" srcset="/img/loading.gif" lazyload></p>
 <p>下面是一堆不明数据，共有42个字节，猜测是对我们的输入进行加密，然后用这部分数据进行验证：</p>
-<p><img src="C:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331123847913.png" srcset="/img/loading.gif" lazyload alt="image-20250331123847913"></p>
+<p><img src="/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331123847913.png" srcset="/img/loading.gif" lazyload></p>
 <p>再下面就是判断输入是否正确的逻辑：</p>
-<p><img src="C:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331123735468.png" srcset="/img/loading.gif" lazyload alt="image-20250331123735468"></p>
+<p><img src="/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331123735468.png" srcset="/img/loading.gif" lazyload></p>
 <p>那我们的目标就很显然，那就是找出对输入进行加密的函数</p>
 <p>学长说过，高级语言看不懂，那就可以直接开始动调了，在动调的过程中验证自己静态分析时的猜想，并定位关键逻辑</p>
 <p>动调之后，将<code>while(1)</code>之前的逻辑理了个大差不差（</p>
-<p><img src="C:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331125817699.png" srcset="/img/loading.gif" lazyload alt="image-20250331125817699"></p>
+<p><img src="/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331125817699.png" srcset="/img/loading.gif" lazyload></p>
 <p>大概就是输入flag，然后将flag在几个变量之间来回倒腾</p>
 <p>继续看下面的代码，大概率就是加密逻辑了：</p>
-<p><img src="C:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331130100979.png" srcset="/img/loading.gif" lazyload alt="image-20250331130100979"></p>
+<p><img src="/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331130100979.png" srcset="/img/loading.gif" lazyload></p>
 <p>这里可以从上往下和从下往上两头分析</p>
 <p>在<code>if ( v7 == 1114112 )</code>处下断，F9跳转，发现又跳了回来，结合变量值的变化，得知这个循环是在遍历输入的每个字符，v26和v25分别是当前字符和其对应的索引，v15貌似是当前字符和密钥（其实就是<code>thisiskey</code>）的的某一位异或后的结果（说起来密钥和<code>plz input</code>放一起还挺具有迷惑性的，其实当时看到<code>[v25%9]</code>就应该意识到密钥只取前9位的，还是不够敏感）</p>
 <p>经过不懈地F9，观察数据的变化，终于把代码分析懂了，这里直接给出修改后的变量名和注释：</p>
-<p><img src="C:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331133844200.png" srcset="/img/loading.gif" lazyload alt="image-20250331133844200"></p>
-<p><img src="C:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331133902360.png" srcset="/img/loading.gif" lazyload alt="image-20250331133902360"></p>
+<p><img src="/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331133844200.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331133902360.png" srcset="/img/loading.gif" lazyload></p>
 <ul>
 <li><p>res_list在内存里的样子：</p>
-<p><img src="C:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331133954598.png" srcset="/img/loading.gif" lazyload alt="image-20250331133954598"></p>
+<p><img src="/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331133954598.png" srcset="/img/loading.gif" lazyload></p>
 </li>
 </ul>
 <p>接下来又对res_list进行了加密……</p>
 <p>用到了下面三个函数：</p>
-<p><img src="C:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331134151782.png" srcset="/img/loading.gif" lazyload alt="image-20250331134151782"></p>
+<p><img src="/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331134151782.png" srcset="/img/loading.gif" lazyload></p>
 <p>点进去看，第一个和第三个函数有点像RC4的KSA和PRGA……然后第二个函数应该只是将<code>res_list</code>的值拷贝到了<code>v7</code></p>
 <p>经过验证，确实是这样的</p>
 <p>接下来我们只需将上述两步加密操作逆过来，即可得到flag，给出EXP：</p>
@@ -440,25 +442,25 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">input</span>=[<span class="hljs-number">0x99</span>, <span class="hljs-number">0x9F</span>, <span class="hljs-number">0x9D</span>, <span class="hljs-number">0xA1</span>, <span class="hljs-number">0xA9</span>, <span class="hljs-number">0xA2</span>, <span class="hljs-number">0xF6</span>, <span class="hljs-number">0xEA</span>, <br>       <span class="hljs-number">0xA4</span>, <span class="hljs-number">0x9E</span>, <span class="hljs-number">0xF4</span>, <span class="hljs-number">0xEE</span>, <span class="hljs-number">0x9E</span>, <span class="hljs-number">0xDB</span>, <span class="hljs-number">0xD3</span>, <span class="hljs-number">0xEA</span>, <br>       <span class="hljs-number">0x9E</span>, <span class="hljs-number">0xA6</span>, <span class="hljs-number">0xE0</span>, <span class="hljs-number">0xF7</span>, <span class="hljs-number">0xEF</span>, <span class="hljs-number">0xD1</span>, <span class="hljs-number">0xF2</span>, <span class="hljs-number">0xEB</span>, <br>       <span class="hljs-number">0xA1</span>, <span class="hljs-number">0xE8</span>, <span class="hljs-number">0xDB</span>, <span class="hljs-number">0xCA</span>, <span class="hljs-number">0xE0</span>, <span class="hljs-number">0xEE</span>, <span class="hljs-number">0xA3</span>, <span class="hljs-number">0xF0</span>, <br>       <span class="hljs-number">0xCE</span>, <span class="hljs-number">0xA0</span>, <span class="hljs-number">0xEF</span>, <span class="hljs-number">0xA6</span>, <span class="hljs-number">0xCE</span>, <span class="hljs-number">0xA7</span>, <span class="hljs-number">0xF2</span>, <span class="hljs-number">0xD1</span>, <br>       <span class="hljs-number">0xE7</span>, <span class="hljs-number">0x9B</span>]<br>key = <span class="hljs-string">&#x27;thisiskey&#x27;</span><br><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>,<span class="hljs-built_in">len</span>(<span class="hljs-built_in">input</span>)):<br>    <span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(((<span class="hljs-built_in">input</span>[i] + <span class="hljs-built_in">ord</span>(key[(<span class="hljs-number">8</span> - i) % <span class="hljs-number">9</span>])) ^ <span class="hljs-built_in">ord</span>(key[i % <span class="hljs-number">9</span>])) &amp; <span class="hljs-number">0xFF</span>), end=<span class="hljs-string">&#x27;&#x27;</span>)<br></code></pre></td></tr></table></figure></li>
 </ul>
 <h2 id="天堂之门"><a href="#天堂之门" class="headerlink" title="天堂之门"></a>天堂之门</h2><p>32位，无壳，拖入IDA，定位main函数，把函数和变量重命名一下</p>
-<p><img src="C:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331140319205.png" srcset="/img/loading.gif" lazyload alt="image-20250331140319205"></p>
+<p><img src="/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331140319205.png" srcset="/img/loading.gif" lazyload></p>
 <p>感觉看不出来啥，于是在16行处下断，开始动调</p>
 <p>由于有一段内联汇编代码，果断放弃看伪代码，直接看汇编：</p>
-<p><img src="C:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331140631136.png" srcset="/img/loading.gif" lazyload alt="image-20250331140631136"></p>
+<p><img src="/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331140631136.png" srcset="/img/loading.gif" lazyload></p>
 <p>这里有个奇怪的远眺转，我单步步过的时候会跑飞，上网查了一下，原来天堂之门是一种技术，通过在程序内修改代码段寄存器来切换32位模式和64位模式，从而达到反调试的目的（调试器不能跨架构）</p>
 <blockquote>
 <p>这里涉及一个我之前折腾自制操作系统时接触到的一个知识点——在Windows中，程序可以通过修改代码段寄存器切换32位模式和64位模式，当CS为0x33时，CPU按64位模式执行指令，当CS为0x23,时，CPU按32位模式执行指令。执行完这个远跳转后，程序跳转到2E5310这个地址（也就是下一条指令），CPU切换到64位模式执行，所以接下来的代码都要按64位模式解析。</p>
 <p>[<a target="_blank" rel="noopener" href="https://bbs.kanxue.com/thread-269328.htm">原创]羊城杯OddCode题解（unicorn模拟调试+求解）-CTF对抗-看雪-安全社区|安全招聘|kanxue.com</a></p>
 </blockquote>
 <p>也就是说loc_401125处的函数会在64位模式下运行，那么好，我们跟进（</p>
-<p><img src="C:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331141434382.png" srcset="/img/loading.gif" lazyload alt="image-20250331141434382"></p>
+<p><img src="/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331141434382.png" srcset="/img/loading.gif" lazyload></p>
 <p>尝试读了一下，感觉怪怪的（因为是在32位模式下解析64位的代码），不过也大体能知道在干啥</p>
 <p>传了3个参数进去，然后调用<code>[ebp+var_88]</code>处的函数，然后再将程序切换回32位模式，调用loc_401158处的函数</p>
 <p>这里先点进<code>[ebp+var_88]</code>处的函数看看，发现是个标准的XTEA加密（大概能看懂</p>
-<p><img src="C:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331142014423.png" srcset="/img/loading.gif" lazyload alt="image-20250331142014423"></p>
+<p><img src="/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331142014423.png" srcset="/img/loading.gif" lazyload></p>
 <p>看不懂的话也可以选择写个脚本将64位模式下执行的代码dump出来，我这里懒得搞了，反正看出来是XTEA加密了，而且大概率没魔改</p>
 <p>继续分析汇编的控制流程图，发现后面就是个与目标数据逐字节比对的过程，循环次数为0x50，目标数据在<code>byte_422140</code>数组中，正好80字节</p>
 <p>直接写脚本解密，发现是乱码，后来学长告诉我就差一点，然后发现他把密钥的第一位改了（</p>
-<p><img src="C:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250331142547941.png" srcset="/img/loading.gif" lazyload alt="image-20250331142547941"></p>
+<p><img src="/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250331142547941.png" srcset="/img/loading.gif" lazyload></p>
 <p>修改密钥后解密，成功！</p>
 <p>EXP如下：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-type">void</span> <span class="hljs-title function_">tea_decode</span><span class="hljs-params">(<span class="hljs-type">unsigned</span> <span class="hljs-type">int</span> ciphertext[<span class="hljs-number">2</span>], <span class="hljs-type">unsigned</span> <span class="hljs-type">int</span> *key)</span><br>&#123;<br>    <span class="hljs-type">unsigned</span> <span class="hljs-type">int</span> cip0 = ciphertext[<span class="hljs-number">0</span>];<br>    <span class="hljs-type">unsigned</span> <span class="hljs-type">int</span> cip1 = ciphertext[<span class="hljs-number">1</span>];<br>    <span class="hljs-type">unsigned</span> <span class="hljs-type">int</span> sum = <span class="hljs-number">32</span> * (<span class="hljs-number">-1640531527</span>);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt;= <span class="hljs-number">0x1F</span>; ++i)<br>    &#123;<br>        cip1 -= (cip0 + ((cip0 &gt;&gt; <span class="hljs-number">5</span>) ^ (<span class="hljs-number">16</span> * cip0))) ^ (sum + key[(sum &gt;&gt; <span class="hljs-number">11</span>) &amp; <span class="hljs-number">3</span>]);<br>        sum += <span class="hljs-number">1640531527</span>;<br>        cip0 -= (cip1 + ((cip1 &gt;&gt; <span class="hljs-number">5</span>) ^ (<span class="hljs-number">16</span> * cip1))) ^ (sum + key[sum &amp; <span class="hljs-number">3</span>]);<br>    &#125;<br>    ciphertext[<span class="hljs-number">0</span>] = cip0;<br>    ciphertext[<span class="hljs-number">1</span>] = cip1;<br>&#125;<br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-type">unsigned</span> <span class="hljs-type">int</span> key[] = &#123;<span class="hljs-number">0x76616548</span>, <span class="hljs-number">0x745F6E65</span>, <span class="hljs-number">0x645F6568</span>, <span class="hljs-number">0x726F6F6F</span>&#125;; <span class="hljs-comment">// 密钥</span><br>    <span class="hljs-type">unsigned</span> <span class="hljs-type">int</span> v4[] = &#123;<br>        <span class="hljs-number">0xD915C57F</span>,<br>        <span class="hljs-number">0x5C1F5453</span>,<br>        <span class="hljs-number">0xE1A1A964</span>,<br>        <span class="hljs-number">0xE9DA3FA7</span>,<br>        <span class="hljs-number">0x0849BFAF</span>,<br>        <span class="hljs-number">0x1C1B1D10</span>,<br>        <span class="hljs-number">0xD2F4F10F</span>,<br>        <span class="hljs-number">0xAACBB1E2</span>,<br>        <span class="hljs-number">0xB437543B</span>,<br>        <span class="hljs-number">0xF91AD3AA</span>,<br>        <span class="hljs-number">0x19FE31CC</span>,<br>        <span class="hljs-number">0xC20FF606</span>,<br>        <span class="hljs-number">0x9095852F</span>,<br>        <span class="hljs-number">0xC7C93CC6</span>,<br>        <span class="hljs-number">0xE451A1A8</span>,<br>        <span class="hljs-number">0x298E7684</span>,<br>        <span class="hljs-number">0xD9B3FCF8</span>,<br>        <span class="hljs-number">0x3906D922</span>,<br>        <span class="hljs-number">0xC754C18F</span>,<br>        <span class="hljs-number">0xEE79F78D</span>&#125;;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++)<br>    &#123;<br>        tea_decode(v4 + <span class="hljs-number">2</span> * i, (<span class="hljs-type">unsigned</span> <span class="hljs-type">int</span> *)key); <span class="hljs-comment">// 以两个32位数据为单位来进行解密</span><br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">80</span>; i++)<br>    &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%c&quot;</span>, *((<span class="hljs-type">unsigned</span> <span class="hljs-type">char</span> *)v4 + i));<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
@@ -471,15 +473,15 @@
 </ul>
 <p>64位exe，无壳，拖入IDA</p>
 <p>shift+f12 捕捉到关键字符串”WHUCTF”，点击跟进</p>
-<p><img src="C:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250407180328909.png" srcset="/img/loading.gif" lazyload alt="image-20250407180328909"></p>
+<p><img src="/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250407180328909.png" srcset="/img/loading.gif" lazyload></p>
 <p>定位关键函数，反编译，然后天塌了……</p>
-<p><img src="C:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250407180430769.png" srcset="/img/loading.gif" lazyload alt="image-20250407180430769"></p>
+<p><img src="/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250407180430769.png" srcset="/img/loading.gif" lazyload></p>
 <p>浏览代码，捕捉到关键数据，有几段关键数据：</p>
-<p><img src="C:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250407181006062.png" srcset="/img/loading.gif" lazyload alt="image-20250407181006062"></p>
+<p><img src="/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250407181006062.png" srcset="/img/loading.gif" lazyload></p>
 <p>结合代码中检索到的为数不多的能看懂的信息，猜测<strong>程序功能</strong>如下：</p>
 <ul>
 <li><p>首先要求我们输入一个字符串，要求以 <code>WHUCTF&#123;</code> 开头，<code>&#125;</code> 结尾，输入字符的ASCII值必须在33-125之间</p>
-<p><img src="C:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250407181600494.png" srcset="/img/loading.gif" lazyload alt="image-20250407181600494"></p>
+<p><img src="/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250407181600494.png" srcset="/img/loading.gif" lazyload></p>
 </li>
 <li><p>其次将我们输入的字符串通过<code>&#39;_&#39;</code>来进行分割，共7部分，每部分的长度第三张图已给出，分别是5 7 6 2 3 2 4</p>
 </li>
@@ -487,13 +489,13 @@
 </li>
 </ul>
 <p>如果你以为这就完了，然后直接开始爆破MD5或CRC32，那就寄了（别问我怎么知道的），因为你漏了一条关键信息：</p>
-<p><img src="C:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250407182959077.png" srcset="/img/loading.gif" lazyload alt="image-20250407182959077"></p>
+<p><img src="/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250407182959077.png" srcset="/img/loading.gif" lazyload></p>
 <blockquote>
 <p><code>RtlCreateUnicodeStringFromAsciiz</code> 是 Windows 内核模式提供的一个函数，属于 NT 内核运行时库（NtDll.dll 或内核模块），主要用于将 ASCII 字符串（以 <code>\0</code> 结尾） 转换为 Unicode 字符串（UTF-16）。</p>
 </blockquote>
 <p>来自微软官网的截图：</p>
-<p><img src="C:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250407184214830.png" srcset="/img/loading.gif" lazyload alt="image-20250407184214830"></p>
-<p><img src="C:\Users\28945\AppData\Roaming\Typora\typora-user-images\image-20250407184149276.png" srcset="/img/loading.gif" lazyload alt="image-20250407184149276"></p>
+<p><img src="/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250407184214830.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2025/04/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/F2025-Re%E5%A4%8D%E7%8E%B0/image-20250407184149276.png" srcset="/img/loading.gif" lazyload></p>
 <p>具体实现搞不懂，但大体意思就是，我们输入的字符串会被转换为UTF-16编码的Unicode字符串！！！</p>
 <p>如果你直接将字符串按照utf-8编码解释并爆破，恭喜你白干了</p>
 <p>知道了这些，下面就可以愉快的写MD5的爆破脚本了（CRC32不会</p>
@@ -524,8 +526,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div></div>
-      <div>http://lingchen0408.github.io/2025/04/07/WHUCTF Re解题记录/</div>
+      <div>WHUCTF2025-Re复现</div>
+      <div>http://lingchen0408.github.io/2025/04/07/WHUCTF2025-Re复现/</div>
     </div>
     <div class="license-meta">
       
