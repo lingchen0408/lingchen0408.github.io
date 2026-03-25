@@ -1,0 +1,49 @@
+/* 调整文章标题样式 */
+.post-title {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  border-left: 4px solid #3498db;
+  padding-left: 10px;
+}
+
+/* 调整文章内容样式 */
+.post-content p {
+  line-height: 1.8;
+  text-indent: 2em;
+}
+
+/* 调整代码块样式 */
+pre {
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 调整侧边栏样式 */
+.aside-content {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  padding: 15px;
+}
+
+/* 添加文章卡片悬浮效果 */
+.article-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 自定义按钮样式 */
+.btn {
+  border-radius: 20px;
+  padding: 8px 16px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
