@@ -1,7 +1,12 @@
+/* 全局字体设置 */
+body {
+  font-size: 17px;
+  color: #222;
+}
 /* 调整文章标题样式 */
 .post-title {
-  font-size: 1.5rem;
-  color: #333;
+  font-size: 1.8rem;
+  color: #111;
   margin-bottom: 1rem;
   font-weight: bold;
   border-left: 4px solid #3498db;
@@ -10,8 +15,10 @@
 
 /* 调整文章内容样式 */
 .post-content p {
+  font-size: 1.15rem;
   line-height: 1.8;
-  text-indent: 2em;
+  /* text-indent: 2em; */
+  color: #222;
 }
 
 /* 调整代码块样式 */
