@@ -72,3 +72,8 @@ pre {
 #aside-content .card-info #card-info-btn span {
   color: inherit;
 }
+
+/* 侧边栏公告图标 */
+#aside-content .card-announcement .item-headline i {
+  color: #6f9da0;
+}
