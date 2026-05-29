@@ -54,3 +54,21 @@ pre {
 .btn:hover {
   transform: scale(1.05);
 }
+
+/* 侧边栏 Follow Me 按钮 */
+#aside-content .card-info #card-info-btn {
+  border: 1px solid #b9d7d9;
+  background-color: #edf7f7;
+  color: #2f6063;
+}
+
+#aside-content .card-info #card-info-btn:hover {
+  border-color: #9cc7ca;
+  background-color: #dceff0;
+  color: #244d50;
+}
+
+#aside-content .card-info #card-info-btn i,
+#aside-content .card-info #card-info-btn span {
+  color: inherit;
+}
